@@ -6,11 +6,11 @@ namespace Initred\NeoBlade\Components\Input;
 
 use Closure;
 use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
+use Initred\NeoBlade\Components\NeoBladeComponent;
 use Initred\NeoBlade\Enums\NeoBladeComponentEnum;
 use Initred\NeoBlade\Traits\NeoBladeTheme;
 
-class Help extends Component
+class Help extends NeoBladeComponent
 {
     use NeoBladeTheme;
 

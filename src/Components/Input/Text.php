@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Initred\NeoBlade\Components\Input;
 
 use Closure;
