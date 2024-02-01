@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^8.1",
+        "illuminate/contracts": "*",
         "illuminate/support": "*",
         "illuminate/view": "*",
         "nesbot/carbon": "^2.72"
@@ -26,7 +27,7 @@
         "nunomaduro/collision": "^7.10",
         "larastan/larastan": "^2.8.1",
         "orchestra/testbench": "^8.21",
-        "pestphp/pest": "^2.*",
+        "pestphp/pest": "^2.33",
         "pestphp/pest-plugin-arch": "^2.7",
         "pestphp/pest-plugin-laravel": "^2.2",
         "phpstan/extension-installer": "^1.3",
