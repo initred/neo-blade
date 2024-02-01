@@ -2,23 +2,61 @@
 
 namespace Initred\NeoBlade;
 
-use Initred\NeoBlade\Commands\NeoBladeCommand;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\Str;
+use Illuminate\View\Compilers\BladeCompiler;
+use Illuminate\Support\ServiceProvider;
+use Initred\NeoBlade\Components\NeoBladeComponent;
 
-class NeoBladeServiceProvider extends PackageServiceProvider
+final class NeoBladeServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+
+    public function register(): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('neo-blade')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasCommand(NeoBladeCommand::class);
+        $this->mergeConfigFrom(__DIR__.'/../config/neo-blade.php', 'neo-blade');
+    }
+
+    public function boot(): void
+    {
+        $this->bootResources();
+        $this->bootBladeComponents();
+    }
+
+    private function bootResources(): void
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'neo-blade');
+    }
+
+    private function bootBladeComponents(): void
+    {
+        $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
+            $prefix = config('neo-blade.prefix', '');
+            $assets = config('neo-blade.assets', []);
+
+            /** @var NeoBladeComponent $component */
+            foreach (config('neo-blade.components', []) as $alias => $component) {
+                $blade->component($component, $alias, $prefix);
+
+                $this->registerAssets($component, $assets);
+            }
+        });
+    }
+
+    private function registerAssets($component, array $assets): void
+    {
+        foreach ($component::assets() as $asset) {
+            $files = (array) ($assets[$asset] ?? []);
+
+            collect($files)->filter(function (string $file) {
+                return Str::endsWith($file, '.css');
+            })->each(function (string $style) {
+                NeoBlade::addStyle($style);
+            });
+
+            collect($files)->filter(function (string $file) {
+                return Str::endsWith($file, '.js');
+            })->each(function (string $script) {
+                NeoBlade::addScript($script);
+            });
+        }
     }
 }

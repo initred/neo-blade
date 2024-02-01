@@ -5,7 +5,7 @@ namespace Initred\NeoBlade\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \VendorName\Skeleton\Skeleton
+ * @see \Initred\NeoBlade\NeoBlade
  */
 class NeoBlade extends Facade
 {
