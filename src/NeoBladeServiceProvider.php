@@ -17,7 +17,7 @@ final class NeoBladeServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        Blade::componentNamespace('Nightshade\\Views\\Components', config('neo-blade.prefix', 'neo-blade'));
+        Blade::componentNamespace('Initred\\NeoBlade\\Components', config('neo-blade.prefix', 'neo-blade'));
         $this->bootResources();
         $this->bootBladeComponents();
     }
