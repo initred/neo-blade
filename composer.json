@@ -76,7 +76,7 @@
                 "Initred\\NeoBlade\\NeoBladeServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "NeoBlade"
+                "NeoBlade": "NeoBlade"
             }
         }
     },
