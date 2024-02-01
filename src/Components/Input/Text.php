@@ -19,6 +19,7 @@ class Text extends NeoBladeComponent
     ) {
         self::setVariants(NeoBladeComponentEnum::INPUT);
     }
+
     /**
      * Get the view / contents that represent the component.
      */

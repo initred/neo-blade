@@ -2,14 +2,13 @@
 
 namespace Initred\NeoBlade;
 
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
-use Illuminate\Support\ServiceProvider;
 use Initred\NeoBlade\Components\NeoBladeComponent;
 
 final class NeoBladeServiceProvider extends ServiceProvider
 {
-
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/neo-blade.php', 'neo-blade');
