@@ -28,7 +28,7 @@ return [
     | Components Prefix
     |--------------------------------------------------------------------------
     |
-    | This value will set a prefix for all NeoBlade Kit components.
+    | This value will set a prefix for all NeoBlade components.
     | By default it's empty. This is useful if you want to avoid
     | collision with components from other libraries.
     |
@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'prefix' => '',
+    'prefix' => 'neo-blade',
 
     /*
     |--------------------------------------------------------------------------

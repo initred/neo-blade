@@ -2,6 +2,7 @@
 
 namespace Initred\NeoBlade;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
@@ -18,6 +19,8 @@ final class NeoBladeServiceProvider extends ServiceProvider
     {
         $this->bootResources();
         $this->bootBladeComponents();
+        logger(config('neo-blade.prefix'));
+        Blade::componentNamespace('Initred\\NeoBlade\\Components', config('neo-blade.prefix'));
     }
 
     private function bootResources(): void
@@ -32,7 +35,7 @@ final class NeoBladeServiceProvider extends ServiceProvider
             $assets = config('neo-blade.assets', []);
 
             /** @var NeoBladeComponent $component */
-            foreach (config('neo-blade.components', []) as $alias => $component) {
+            foreach (collect(config('neo-blade.components', []))->dot()->toArray() as $alias => $component) {
                 $blade->component($component, $alias, $prefix);
 
                 $this->registerAssets($component, $assets);
