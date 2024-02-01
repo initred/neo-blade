@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Initred\NeoBlade\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class NeoBladeCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'neo-blade';
 
     public $description = 'My command';
 
