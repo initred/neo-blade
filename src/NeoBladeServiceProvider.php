@@ -17,10 +17,9 @@ final class NeoBladeServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        Blade::componentNamespace('Nightshade\\Views\\Components', config('neo-blade.prefix', 'neo-blade'));
         $this->bootResources();
         $this->bootBladeComponents();
-        logger(config('neo-blade.prefix'));
-        Blade::componentNamespace('Initred\\NeoBlade\\Components', config('neo-blade.prefix'));
     }
 
     private function bootResources(): void
@@ -31,12 +30,11 @@ final class NeoBladeServiceProvider extends ServiceProvider
     private function bootBladeComponents(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
-            $prefix = config('neo-blade.prefix', '');
             $assets = config('neo-blade.assets', []);
 
             /** @var NeoBladeComponent $component */
             foreach (collect(config('neo-blade.components', []))->dot()->toArray() as $alias => $component) {
-                $blade->component($component, $alias, $prefix);
+                $blade->component($component, $alias);
 
                 $this->registerAssets($component, $assets);
             }
