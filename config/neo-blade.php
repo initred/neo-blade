@@ -21,6 +21,8 @@ return [
             'help' => Components\Input\Help::class,
             'label' => Components\Input\Label::class,
         ],
+        'form-control' => Components\FormControl::class,
+        'form-group' => Components\FormGroup::class,
     ],
 
     /*

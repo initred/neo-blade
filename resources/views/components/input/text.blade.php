@@ -1,4 +1,8 @@
+@props([
+    'type' => 'text',
+])
+
 <input
-    type="text"
+    type="{{ $type }}"
     {{ $attributes->merge(['class' => data_get($variants, 'base')]) }}
 >
