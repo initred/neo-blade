@@ -9,8 +9,9 @@ enum NeoBladeComponentEnum: string
     case HELP = 'help';
     case TEXTAREA = 'textarea';
     case SELECT = 'select';
+    case FORM_GROUPS = 'form-groups';
     case FORM_GROUP = 'form-group';
-    case FORM_CONTROL = 'form-control';
+    case BUTTON = 'button';
 
     public function getConfig(): array|string
     {

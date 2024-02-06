@@ -2,15 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Initred\NeoBlade\Components\Input;
+namespace Initred\NeoBlade\Components\Inputs;
 
 use Closure;
 use Illuminate\Contracts\View\View;
-use Initred\NeoBlade\Components\NeoBladeComponent;
-use Initred\NeoBlade\Enums\NeoBladeComponentEnum;
 use Initred\NeoBlade\Traits\NeoBladeTheme;
 
-class Label extends NeoBladeComponent
+class Date extends Input
 {
     use NeoBladeTheme;
 
@@ -18,8 +16,9 @@ class Label extends NeoBladeComponent
      * Create a new component instance.
      */
     public function __construct(
+        ?string $name = null, ?string $id = null, ?string $value = ''
     ) {
-        self::setVariants(NeoBladeComponentEnum::LABEL);
+        parent::__construct($name, $id, 'date', $value);
     }
 
     /**
@@ -27,6 +26,6 @@ class Label extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.input.label');
+        return view('neo-blade::components.inputs.date');
     }
 }

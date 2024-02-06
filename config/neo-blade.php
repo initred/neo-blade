@@ -17,12 +17,13 @@ return [
 
     'components' => [
         'input' => [
-            'text' => Components\Input\Text::class,
-            'help' => Components\Input\Help::class,
-            'label' => Components\Input\Label::class,
+            'input' => Components\Inputs\Input::class,
+            'help' => Components\Inputs\Help::class,
+            'label' => Components\Inputs\Label::class,
         ],
-        'form-control' => Components\FormControl::class,
-        'form-group' => Components\FormGroup::class,
+        'form' => Components\Forms\Form::class,
+        'groups' => Components\Forms\Groups::class,
+        'group' => Components\Forms\Group::class,
     ],
 
     /*
@@ -40,7 +41,7 @@ return [
     |
     */
 
-    'prefix' => 'neo-blade',
+    'prefix' => 'neo',
 
     /*
     |--------------------------------------------------------------------------
@@ -132,11 +133,65 @@ return [
                 ],
             ],
         ],
-        'form-control' => [
-            'base' => 'mt-2',
+        'form-groups' => [
+            'base' => 'space-y-4',
         ],
         'form-group' => [
-            'base' => 'space-y-4',
+            'base' => 'mt-2',
+        ],
+        'button' => [
+            'base' => [
+                'font-semibold disabled:opacity-25 disabled:cursor-not-allowed',
+            ],
+            'size' => [
+                'default' => '',
+                'xs' => 'rounded px-2 py-1 text-xs',
+                'sm' => 'rounded px-2 py-1 text-sm',
+                'md' => 'rounded-md px-2.5 py-1.5 text-sm',
+                'lg' => 'rounded-md px-3 py-2 text-sm',
+                'xl' => 'rounded-md px-3.5 py-2.5 text-sm',
+                '2xl' => 'rounded-xl px-3.5 py-4 text-base',
+                '3xl' => 'rounded-2xl px-3.5 py-6 text-lg',
+            ],
+            'color' => [
+                'default' => '',
+                'link' => 'hover:underline',
+                'text' => [
+                    'font-semibold leading-normal text-primary-600 hover:text-primary-500 dark:text-primary-400 dark:hover:text-primary-300',
+                    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600',
+                ],
+                'primary' => [
+                    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600',
+                    'bg-primary-600 hover:bg-primary-500 text-white shadow-sm',
+                    'dark:bg-primary-500 dark:hover:bg-primary-400 dark:focus-visible:outline-primary-500',
+                ],
+                'secondary' => [
+                    'ring-1 ring-inset ring-secondary-300',
+                    'dark:ring-0',
+                    'bg-white hover:bg-secondary-50 text-secondary-900',
+                    'dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white',
+                ],
+                'info' => [
+                    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-info-600',
+                    'bg-info-600 hover:bg-info-500 text-white shadow-sm',
+                    'dark:bg-info-500 dark:hover:bg-info-400 dark:focus-visible:outline-info-500',
+                ],
+                'success' => [
+                    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-success-600',
+                    'bg-success-600 hover:bg-success-500 text-white shadow-sm',
+                    'dark:bg-success-500 dark:hover:bg-success-400 dark:focus-visible:outline-success-500',
+                ],
+                'warning' => [
+                    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning-600',
+                    'bg-warning-600 hover:bg-warning-500 text-white shadow-sm',
+                    'dark:bg-warning-500 dark:hover:bg-warning-400 dark:focus-visible:outline-warning-500',
+                ],
+                'danger' => [
+                    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-danger-600',
+                    'bg-danger-600 hover:bg-danger-500 text-white shadow-sm',
+                    'dark:bg-danger-500 dark:hover:bg-danger-400 dark:focus-visible:outline-danger-500',
+                ],
+            ],
         ],
     ],
 ];

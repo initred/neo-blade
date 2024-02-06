@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Initred\NeoBlade\Components\Input;
+namespace Initred\NeoBlade\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -10,7 +10,7 @@ use Initred\NeoBlade\Components\NeoBladeComponent;
 use Initred\NeoBlade\Enums\NeoBladeComponentEnum;
 use Initred\NeoBlade\Traits\NeoBladeTheme;
 
-class Help extends NeoBladeComponent
+class Groups extends NeoBladeComponent
 {
     use NeoBladeTheme;
 
@@ -19,7 +19,7 @@ class Help extends NeoBladeComponent
      */
     public function __construct(
     ) {
-        self::setVariants(NeoBladeComponentEnum::HELP);
+        self::setVariants(NeoBladeComponentEnum::FORM_GROUPS);
     }
 
     /**
@@ -27,6 +27,6 @@ class Help extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.input.help');
+        return view('neo-blade::components.forms.groups');
     }
 }

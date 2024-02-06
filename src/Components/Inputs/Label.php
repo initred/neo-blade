@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Initred\NeoBlade\Components\Input;
+namespace Initred\NeoBlade\Components\Inputs;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -10,7 +10,7 @@ use Initred\NeoBlade\Components\NeoBladeComponent;
 use Initred\NeoBlade\Enums\NeoBladeComponentEnum;
 use Initred\NeoBlade\Traits\NeoBladeTheme;
 
-class Text extends NeoBladeComponent
+class Label extends NeoBladeComponent
 {
     use NeoBladeTheme;
 
@@ -19,7 +19,7 @@ class Text extends NeoBladeComponent
      */
     public function __construct(
     ) {
-        self::setVariants(NeoBladeComponentEnum::INPUT);
+        self::setVariants(NeoBladeComponentEnum::LABEL);
     }
 
     /**
@@ -27,6 +27,6 @@ class Text extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.input.text');
+        return view('neo-blade::components.inputs.label');
     }
 }

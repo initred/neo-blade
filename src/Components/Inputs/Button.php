@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Initred\NeoBlade\Components;
+namespace Initred\NeoBlade\Components\Inputs;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+use Initred\NeoBlade\Components\NeoBladeComponent;
 use Initred\NeoBlade\Enums\NeoBladeComponentEnum;
 use Initred\NeoBlade\Traits\NeoBladeTheme;
 
-class FormGroup extends NeoBladeComponent
+class Button extends NeoBladeComponent
 {
     use NeoBladeTheme;
 
@@ -18,7 +19,7 @@ class FormGroup extends NeoBladeComponent
      */
     public function __construct(
     ) {
-        self::setVariants(NeoBladeComponentEnum::FORM_GROUP);
+        self::setVariants(NeoBladeComponentEnum::BUTTON);
     }
 
     /**
@@ -26,6 +27,6 @@ class FormGroup extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.form-group');
+        return view('neo-blade::components.inputs.button');
     }
 }
