@@ -12,6 +12,7 @@ enum NeoBladeComponentEnum: string
     case FORM_GROUPS = 'form-groups';
     case FORM_GROUP = 'form-group';
     case BUTTON = 'button';
+    case ALERT = 'alert';
 
     public function getConfig(): array|string
     {

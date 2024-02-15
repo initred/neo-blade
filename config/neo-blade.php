@@ -21,9 +21,13 @@ return [
             'help' => Components\Inputs\Help::class,
             'label' => Components\Inputs\Label::class,
         ],
+        'alerts' => [
+            'index' => Components\Alerts\Index::class,
+        ],
         'form' => Components\Forms\Form::class,
         'groups' => Components\Forms\Groups::class,
         'group' => Components\Forms\Group::class,
+        'link' => Components\Link::class,
     ],
 
     /*
@@ -191,6 +195,60 @@ return [
                     'bg-danger-600 hover:bg-danger-500 text-white shadow-sm',
                     'dark:bg-danger-500 dark:hover:bg-danger-400 dark:focus-visible:outline-danger-500',
                 ],
+            ],
+        ],
+        'alert' => [
+            'wrapper' => [
+                'base' => 'rounded-md text-pretty p-4',
+                'color' => [
+                    'default' => 'bg-gray-50 dark:bg-gray-800',
+                    'primary' => 'bg-primary-50',
+                    'secondary' => 'bg-secondary-50',
+                    'info' => 'bg-info-50',
+                    'success' => 'bg-success-50',
+                    'warning' => 'bg-warning-50',
+                    'danger' => 'bg-danger-50',
+                ],
+            ],
+            'base' => [
+                'ml-3',
+            ],
+            'header' => [
+                'base' => 'text-sm font-medium',
+                'color' => [
+                    'default' => 'text-gray-800',
+                    'primary' => 'text-primary-800',
+                    'secondary' => 'text-secondary-800',
+                    'info' => 'text-info-800',
+                    'success' => 'text-success-800',
+                    'warning' => 'text-warning-800',
+                    'danger' => 'text-danger-800',
+                ],
+            ],
+            'body' => [
+                'base' => [
+                    'text-sm',
+                    '[&>ul]:list-disc [&>ul]:space-y-1 [&>ul]:pl-5',
+                    '[&>a]:font-medium [&>a]:underline',
+                ],
+                'color' => [
+                    'default' => 'text-gray-800',
+                    'primary' => 'text-primary-800',
+                    'secondary' => 'text-secondary-800',
+                    'info' => 'text-info-800',
+                    'success' => 'text-success-800',
+                    'warning' => 'text-warning-800',
+                    'danger' => 'text-danger-800',
+                ],
+            ],
+            'icon' => [
+                'default' => 'text-gray-400',
+                'primary' => 'text-primary-400',
+                'secondary' => 'text-secondary-400',
+                'info' => 'text-info-400',
+                'success' => 'text-success-400',
+                'warning' => 'text-warning-400',
+                'danger' => 'text-danger-400',
             ],
         ],
     ],
