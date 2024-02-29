@@ -200,8 +200,8 @@ return [
         'alert' => [
             'wrapper' => [
                 'base' => 'rounded-md text-pretty p-4',
-                'color' => [
-                    'default' => 'bg-gray-50 dark:bg-gray-800',
+                'intent' => [
+                    'default' => 'bg-white dark:bg-black',
                     'primary' => 'bg-primary-50',
                     'secondary' => 'bg-secondary-50',
                     'info' => 'bg-info-50',
@@ -209,14 +209,39 @@ return [
                     'warning' => 'bg-warning-50',
                     'danger' => 'bg-danger-50',
                 ],
+                'accent' => [
+                    'base' => 'border-l-4',
+                    'intent' => [
+                        'default' => 'border-gray-400',
+                        'primary' => 'border-primary-400',
+                        'secondary' => 'border-secondary-400',
+                        'info' => 'border-info-400',
+                        'success' => 'border-success-400',
+                        'warning' => 'border-warning-400',
+                        'danger' => 'border-danger-400',
+                    ],
+                ],
             ],
-            'base' => [
-                'ml-3',
+            'base' => 'flex gap-3',
+            'icon' => [
+                'base' => 'flex-shrink-0 text-xl',
+                'intent' => [
+                    'default' => '*:text-gray-600 dark:*:text-gray-400',
+                    'primary' => '*:text-primary-600',
+                    'secondary' => '*:text-secondary-400',
+                    'info' => '*:text-info-400',
+                    'success' => '*:text-success-400',
+                    'warning' => '*:text-warning-400',
+                    'danger' => '*:text-danger-400',
+                ],
+            ],
+            'close' => [
+                'base' => '',
             ],
             'header' => [
                 'base' => 'text-sm font-medium',
-                'color' => [
-                    'default' => 'text-gray-800',
+                'intent' => [
+                    'default' => 'text-gray-900 dark:text-white',
                     'primary' => 'text-primary-800',
                     'secondary' => 'text-secondary-800',
                     'info' => 'text-info-800',
@@ -228,11 +253,12 @@ return [
             'body' => [
                 'base' => [
                     'text-sm',
-                    '[&>ul]:list-disc [&>ul]:space-y-1 [&>ul]:pl-5',
-                    '[&>a]:font-medium [&>a]:underline',
+                    '[&>ul]:list-disc [&>ul]:list-inside [&>ul]:list-disc',
+                    '[&>dl>dt]:font-medium [&>dl>dd]:pl-6',
+                    '[&>a]:font-medium [&>a]:underline [&>a]:hover:underline',
                 ],
-                'color' => [
-                    'default' => 'text-gray-800',
+                'intent' => [
+                    'default' => 'text-gray-900 dark:text-white',
                     'primary' => 'text-primary-800',
                     'secondary' => 'text-secondary-800',
                     'info' => 'text-info-800',
@@ -241,14 +267,65 @@ return [
                     'danger' => 'text-danger-800',
                 ],
             ],
-            'icon' => [
-                'default' => 'text-gray-400',
-                'primary' => 'text-primary-400',
-                'secondary' => 'text-secondary-400',
-                'info' => 'text-info-400',
-                'success' => 'text-success-400',
-                'warning' => 'text-warning-400',
-                'danger' => 'text-danger-400',
+            'footer' => [
+                'wrapper' => 'mt-4',
+                'base' => '-mx-2 -my-1.5 flex',
+                'action' => [
+                    'base' => [
+                        '[&>button]:rounded-md [&>button]:px-2 [&>button]:py-1.5',
+                        '[&>button]:dark:text-white [&>button]:text-sm [&>button]:font-medium',
+                        '[&>button]:focus:outline-none [&>button]:focus:ring-2 [&>button]:focus:ring-offset-2',
+                        '[&>button]:bg-transparent',
+                        '[&>a]:rounded-md [&>a]:px-2 [&>a]:py-1.5',
+                        '[&>a]:dark:text-white [&>a]:text-sm [&>a]:font-medium',
+                        '[&>a]:focus:outline-none [&>a]:focus:ring-2 [&>a]:focus:ring-offset-2',
+                        '[&>a]:bg-transparent',
+                    ],
+                    'intent' => [
+                        'default' => [
+                            '[&>button:hover]:bg-gray-100 [&>button:hover]:dark:bg-gray-700',
+                            '[&>button]:text-gray-900',
+                            '[&>a:hover]:bg-gray-100 [&>a:hover]:dark:bg-gray-700',
+                            '[&>a:hover]:text-gray-900',
+                        ],
+                        'primary' => [
+                            '[&>button:hover]:bg-primary-100 [&>button:hover]:dark:bg-primary-700',
+                            '[&>button:hover]:text-primary-800',
+                            '[&>a:hover]:bg-primary-100 [&>a:hover]:dark:bg-primary-700',
+                            '[&>a:hover]:text-primary-800',
+                        ],
+                        'secondary' => [
+                            '[&>button:hover]:bg-secondary-100 [&>button:hover]:dark:bg-secondary-700',
+                            '[&>button:hover]:text-secondary-800',
+                            '[&>a:hover]:bg-secondary-100 [&>a:hover]:dark:bg-secondary-700',
+                            '[&>a:hover]:text-secondary-800',
+                        ],
+                        'info' => [
+                            '[&>button:hover]:bg-info-100 [&>button:hover]:dark:bg-info-700',
+                            '[&>button:hover]:text-info-800',
+                            '[&>a:hover]:bg-info-100 [&>a:hover]:dark:bg-info-700',
+                            '[&>a:hover]:text-info-800',
+                        ],
+                        'success' => [
+                            '[&>button:hover]:bg-success-100 [&>button:hover]:dark:bg-success-700',
+                            '[&>button:hover]:text-success-800',
+                            '[&>a:hover]:bg-success-100 [&>a:hover]:dark:bg-success-700',
+                            '[&>a:hover]:text-success-800',
+                        ],
+                        'warning' => [
+                            '[&>button:hover]:bg-warning-100 [&>button:hover]:dark:bg-warning-700',
+                            '[&>button:hover]:text-warning-800',
+                            '[&>a:hover]:bg-warning-100 [&>a:hover]:dark:bg-warning-700',
+                            '[&>a:hover]:text-warning-800',
+                        ],
+                        'danger' => [
+                            '[&>button:hover]:bg-danger-100 [&>button:hover]:dark:bg-danger-700',
+                            '[&>button:hover]:text-danger-800',
+                            '[&>a:hover]:bg-danger-100 [&>a:hover]:dark:bg-danger-700',
+                            '[&>a:hover]:text-danger-800',
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
