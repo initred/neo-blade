@@ -17,6 +17,11 @@ final class NeoBladeServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        $this->publishes([
+            __DIR__.'/../config/neo-blade.php' => config_path('neo-blade.php'),
+            __DIR__.'/../stubs/tailwind.neo-blade.config.js' => base_path('tailwind.neo-blade.config.js'),
+        ]);
+
         Blade::componentNamespace('Initred\\NeoBlade\\Components', config('neo-blade.prefix', 'neo-blade'));
         $this->bootResources();
         $this->bootBladeComponents();
@@ -46,17 +51,12 @@ final class NeoBladeServiceProvider extends ServiceProvider
         foreach ($component::assets() as $asset) {
             $files = (array) ($assets[$asset] ?? []);
 
-            collect($files)->filter(function (string $file) {
-                return Str::endsWith($file, '.css');
-            })->each(function (string $style) {
-                NeoBlade::addStyle($style);
-            });
+            collect($files)
+                ->filter(fn (string $file) => Str::endsWith($file, '.css'))
+                ->each(fn (string $style) => NeoBlade::addStyle($style));
 
-            collect($files)->filter(function (string $file) {
-                return Str::endsWith($file, '.js');
-            })->each(function (string $script) {
-                NeoBlade::addScript($script);
-            });
+            collect($files)->filter(fn (string $file) => Str::endsWith($file, '.js'))
+                ->each(fn (string $script) => NeoBlade::addScript($script));
         }
     }
 }

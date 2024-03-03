@@ -6,11 +6,9 @@ namespace Initred\NeoBlade;
 
 final class NeoBlade
 {
-    /** @var array */
-    private static $styles = [];
+    private static array $styles = [];
 
-    /** @var array */
-    private static $scripts = [];
+    private static array $scripts = [];
 
     public static function addStyle(string $style): void
     {
@@ -30,9 +28,9 @@ final class NeoBlade
             return '';
         }
 
-        return collect(self::$styles)->map(function (string $style) {
-            return '<link href="'.$style.'" rel="stylesheet" />';
-        })->implode(PHP_EOL);
+        return collect(self::$styles)
+            ->map(fn (string $style) => '<link href="'.$style.'" rel="stylesheet" />')
+            ->implode(PHP_EOL);
     }
 
     public static function addScript(string $script): void
@@ -53,9 +51,9 @@ final class NeoBlade
             return '';
         }
 
-        return collect(self::$scripts)->map(function (string $script) {
-            return '<script src="'.$script.'"></script>';
-        })->implode(PHP_EOL);
+        return collect(self::$scripts)
+            ->map(fn (string $script) => '<script src="'.$script.'"></script>')
+            ->implode(PHP_EOL);
     }
 
     private static function disableScripts(): bool
