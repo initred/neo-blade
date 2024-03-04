@@ -25,7 +25,7 @@ class Html extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.layouts.html');
+        return view('neo::components.layouts.html');
     }
 
     public function title(): string

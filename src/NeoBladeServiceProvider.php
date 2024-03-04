@@ -22,14 +22,14 @@ final class NeoBladeServiceProvider extends ServiceProvider
             __DIR__.'/../stubs/tailwind.neo-blade.config.js' => base_path('tailwind.neo-blade.config.js'),
         ]);
 
-        Blade::componentNamespace('Initred\\NeoBlade\\Components', config('neo-blade.prefix', 'neo-blade'));
+        Blade::componentNamespace('Initred\\NeoBlade\\Components', 'neo');
         $this->bootResources();
         $this->bootBladeComponents();
     }
 
     private function bootResources(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'neo-blade');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'neo');
     }
 
     private function bootBladeComponents(): void

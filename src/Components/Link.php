@@ -26,6 +26,6 @@ class Link extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.link');
+        return view('neo::components.link');
     }
 }

@@ -27,6 +27,6 @@ class Index extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.alerts.index');
+        return view('neo::components.alerts.index');
     }
 }

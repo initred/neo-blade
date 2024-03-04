@@ -26,6 +26,6 @@ class Email extends Input
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.inputs.email');
+        return view('neo::components.inputs.email');
     }
 }

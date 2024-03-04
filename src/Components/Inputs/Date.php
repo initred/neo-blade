@@ -26,6 +26,6 @@ class Date extends Input
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.inputs.date');
+        return view('neo::components.inputs.date');
     }
 }

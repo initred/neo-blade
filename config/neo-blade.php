@@ -20,6 +20,9 @@ return [
             'input' => Components\Inputs\Input::class,
             'help' => Components\Inputs\Help::class,
             'label' => Components\Inputs\Label::class,
+            'button' => Components\Inputs\Button::class,
+            'date' => Components\Inputs\Date::class,
+            'error' => Components\Inputs\Error::class,
         ],
         'alerts' => [
             'index' => Components\Alerts\Index::class,
@@ -27,25 +30,9 @@ return [
         'form' => Components\Forms\Form::class,
         'groups' => Components\Forms\Groups::class,
         'group' => Components\Forms\Group::class,
+        'dialog' => Components\Dialogs\Dialog::class,
         'link' => Components\Link::class,
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Components Prefix
-    |--------------------------------------------------------------------------
-    |
-    | This value will set a prefix for all NeoBlade components.
-    | By default it's empty. This is useful if you want to avoid
-    | collision with components from other libraries.
-    |
-    | If set with "ui", for example, you can reference components like:
-    |
-    | <x-ui::easy-mde />
-    |
-    */
-
-    'prefix' => 'neo',
 
     /*
     |--------------------------------------------------------------------------
@@ -326,6 +313,45 @@ return [
                         ],
                     ],
                 ],
+            ],
+        ],
+        'dialog' => [
+            'wrapper' => 'relative z-10',
+            'base' => [
+                'fixed inset-0 z-10 w-screen overflow-y-auto',
+                '[&>div]:flex [&>div]:min-h-dvh [&>div]:items-end [&>div]:justify-center',
+                '[&>div]:p-4 [&>div]:text-center [&>div]:sm:items-center [&>div]:sm:p-0',
+            ],
+            'overlay' => [
+                'fixed inset-0 bg-gray-500 bg-opacity-75',
+            ],
+            'content' => [
+                'relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all',
+                'sm:w-full sm:max-w-sm',
+                'px-4 pb-4 pt-5 sm:my-8 sm:p-6',
+            ],
+            'close' => [
+                'absolute right-0 top-0 hidden pr-4 pt-4 sm:block',
+                '[&>button]:rounded-md [&>button]:text-gray-400',
+                '[&>button]:hover:text-gray-500 [&>button]:focus:outline-none',
+                '[&>button]:focus:ring-2 [&>button]:focus:ring-indigo-500 [&>button]:focus:ring-offset-2',
+                '[&>button>svg]:h-6 [&>button>svg]:w-6',
+            ],
+            'header' => [
+                'flex justify-between px-4 py-3 bg-white dark:bg-black',
+                'border-b border-gray-200 dark:border-gray-700',
+                'rounded-t-lg',
+            ],
+            'title' => [
+                'text-lg font-medium leading-6 text-gray-900 dark:text-white',
+            ],
+            'body' => [
+                'px-4 py-3',
+            ],
+            'footer' => [
+                'flex justify-end px-4 py-3 bg-white dark:bg-black',
+                'border-t border-gray-200 dark:border-gray-700',
+                'rounded-b-lg',
             ],
         ],
     ],

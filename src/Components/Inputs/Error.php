@@ -30,7 +30,7 @@ class Error extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.inputs.error');
+        return view('neo::components.inputs.error');
     }
 
     public function messages(ViewErrorBag $errors): array

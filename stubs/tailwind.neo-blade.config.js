@@ -1,15 +1,11 @@
 import colors from 'tailwindcss/colors'
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        './vender/initred/neo-blade/resources/views/**/*.blade.php',
-        './vender/initred/neo-blade/config/neo-blade.php',
-        './config/neo-blade.php',
-    ],
     theme: {
         extend: {
             colors: {
-                primary: colors.sky,
+                primary: colors.blue,
                 secondary: colors.gray,
                 success: colors.green,
                 info: colors.blue,

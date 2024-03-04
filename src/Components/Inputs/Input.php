@@ -43,6 +43,6 @@ class Input extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.inputs.input');
+        return view('neo::components.inputs.input');
     }
 }

@@ -31,6 +31,6 @@ class Form extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.forms.form');
+        return view('neo::components.forms.form');
     }
 }

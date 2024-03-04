@@ -27,6 +27,6 @@ class Label extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo-blade::components.inputs.label');
+        return view('neo::components.inputs.label');
     }
 }
