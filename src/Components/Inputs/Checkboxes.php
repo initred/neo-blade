@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Initred\NeoBlade\Components\Dialogs;
+namespace Initred\NeoBlade\Components\Inputs;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -10,7 +10,7 @@ use Initred\NeoBlade\Components\NeoBladeComponent;
 use Initred\NeoBlade\Enums\NeoBladeComponentEnum;
 use Initred\NeoBlade\Traits\NeoBladeTheme;
 
-class Dialog extends NeoBladeComponent
+class Checkboxes extends NeoBladeComponent
 {
     use NeoBladeTheme;
 
@@ -19,7 +19,7 @@ class Dialog extends NeoBladeComponent
      */
     public function __construct()
     {
-        self::setVariants(NeoBladeComponentEnum::DIALOG);
+        self::setVariants(NeoBladeComponentEnum::CHECKBOXES);
     }
 
     /**
@@ -27,6 +27,6 @@ class Dialog extends NeoBladeComponent
      */
     public function render(): View|Closure|string
     {
-        return view('neo::components.dialogs.dialog');
+        return view('neo::components.inputs.checkboxes');
     }
 }

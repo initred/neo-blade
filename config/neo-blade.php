@@ -30,7 +30,7 @@ return [
         'form' => Components\Forms\Form::class,
         'groups' => Components\Forms\Groups::class,
         'group' => Components\Forms\Group::class,
-        'dialog' => Components\Dialogs\Dialog::class,
+        'dialog' => Components\Dialog::class,
         'link' => Components\Link::class,
     ],
 
@@ -157,9 +157,8 @@ return [
                     'dark:bg-primary-500 dark:hover:bg-primary-400 dark:focus-visible:outline-primary-500',
                 ],
                 'secondary' => [
-                    'ring-1 ring-inset ring-secondary-300',
-                    'dark:ring-0',
-                    'bg-white hover:bg-secondary-50 text-secondary-900',
+                    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400',
+                    'bg-secondary-100 hover:bg-secondary-200 text-secondary-600',
                     'dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white',
                 ],
                 'info' => [
@@ -183,6 +182,21 @@ return [
                     'dark:bg-danger-500 dark:hover:bg-danger-400 dark:focus-visible:outline-danger-500',
                 ],
             ],
+        ],
+        'checkboxes' => [
+            'base' => 'space-y-5',
+            'row' => [
+                'base' => 'relative flex items-start',
+                'input' => 'flex h-6 items-center',
+                'content' => [
+                    'base' => 'ml-3 grow text-sm leading-6',
+                    'label' => 'font-medium text-gray-900',
+                    'description' => 'text-gray-500',
+                ],
+            ],
+        ],
+        'checkbox' => [
+            'base' => 'h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-600',
         ],
         'alert' => [
             'wrapper' => [
@@ -316,42 +330,44 @@ return [
             ],
         ],
         'dialog' => [
-            'wrapper' => 'relative z-10',
-            'base' => [
-                'fixed inset-0 z-10 w-screen overflow-y-auto',
-                '[&>div]:flex [&>div]:min-h-dvh [&>div]:items-end [&>div]:justify-center',
-                '[&>div]:p-4 [&>div]:text-center [&>div]:sm:items-center [&>div]:sm:p-0',
+            'base' => 'relative z-10',
+            'panel' => [
+                'wrapper' => [
+                    'fixed inset-0 z-10 w-screen overflow-y-auto',
+                    '[&>div]:flex [&>div]:min-h-dvh [&>div]:items-end [&>div]:justify-center',
+                    'md:[&>div]:p-4 [&>div]:text-center [&>div]:sm:items-center [&>div]:sm:p-0',
+                ],
+                'base' => [
+                    'relative bg-white dark:bg-gray-800 overflow-hidden',
+                    'relative transform overflow-hidden rounded-t-3xl md:rounded-lg bg-white text-left shadow-xl transition-all',
+                    'w-full sm:max-w-xl',
+                ],
+                'header' => [
+                    'wrapper' => 'sm:flex sm:items-start',
+                    'base' => 'p-4 md:mt-4 space-y-2',
+                    'intent' => 'mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100',
+                    'title' => 'text-lg font-semibold leading-6 text-gray-900',
+                    'description' => 'mt-2 text-sm text-gray-500',
+                ],
+                'body' => 'md:mt-4 p-4',
+                'footer' => 'grid p-4 gap-2',
+                'grab' => [
+                    'wrapper' => 'w-full sm:hidden h-12',
+                    'base' => 'h-full flex justify-center items-center',
+                    'bar' => 'bg-gray-400 rounded-full w-[10%] h-1',
+                ],
+                'close' => [
+                    'base' => 'absolute right-0 top-0 hidden pr-4 pt-4 sm:block',
+                    'button' => [
+                        'rounded-md text-gray-400',
+                        'hover:text-gray-500 focus:outline-none',
+                        'focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
+                    ],
+                    'svg' => 'size-6',
+                ],
             ],
             'overlay' => [
                 'fixed inset-0 bg-gray-500 bg-opacity-75',
-            ],
-            'content' => [
-                'relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all',
-                'sm:w-full sm:max-w-sm',
-                'px-4 pb-4 pt-5 sm:my-8 sm:p-6',
-            ],
-            'close' => [
-                'absolute right-0 top-0 hidden pr-4 pt-4 sm:block',
-                '[&>button]:rounded-md [&>button]:text-gray-400',
-                '[&>button]:hover:text-gray-500 [&>button]:focus:outline-none',
-                '[&>button]:focus:ring-2 [&>button]:focus:ring-indigo-500 [&>button]:focus:ring-offset-2',
-                '[&>button>svg]:h-6 [&>button>svg]:w-6',
-            ],
-            'header' => [
-                'flex justify-between px-4 py-3 bg-white dark:bg-black',
-                'border-b border-gray-200 dark:border-gray-700',
-                'rounded-t-lg',
-            ],
-            'title' => [
-                'text-lg font-medium leading-6 text-gray-900 dark:text-white',
-            ],
-            'body' => [
-                'px-4 py-3',
-            ],
-            'footer' => [
-                'flex justify-end px-4 py-3 bg-white dark:bg-black',
-                'border-t border-gray-200 dark:border-gray-700',
-                'rounded-b-lg',
             ],
         ],
     ],

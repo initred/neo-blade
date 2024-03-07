@@ -15,6 +15,10 @@ enum NeoBladeComponentEnum: string
     case ALERT = 'alert';
     case DIALOG = 'dialog';
 
+    case CHECKBOXES = 'checkboxes';
+
+    case CHECKBOX = 'checkbox';
+
     public function getConfig(): array|string
     {
         return config('neo-blade.variants.'.$this->value, []);

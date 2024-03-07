@@ -39,6 +39,10 @@ final class NeoBladeServiceProvider extends ServiceProvider
 
             /** @var NeoBladeComponent $component */
             foreach (collect(config('neo-blade.components', []))->dot()->toArray() as $alias => $component) {
+                //                $alias = str($alias)->endsWith('.index')
+                //                    ? str($alias)->replaceEnd('.index', '')->toString()
+                //                    : $alias;
+
                 $blade->component($component, $alias);
 
                 $this->registerAssets($component, $assets);

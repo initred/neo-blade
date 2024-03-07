@@ -15,7 +15,7 @@
 </head>
 <body {{ $attributes }}>
     {{ $slot }}
-    @livewireScripts
+    @livewireScriptConfig
     @stack('scripts')
 </body>
 </html>
