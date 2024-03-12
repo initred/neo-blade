@@ -333,26 +333,26 @@ return [
             'base' => 'relative z-10',
             'panel' => [
                 'wrapper' => [
-                    'fixed inset-0 z-10 w-screen overflow-y-auto',
+                    'fixed inset-0 z-10 w-screen overflow-y-auto pt-[20%] md:pt-auto',
                     '[&>div]:flex [&>div]:min-h-dvh [&>div]:items-end [&>div]:justify-center',
                     'md:[&>div]:p-4 [&>div]:text-center [&>div]:sm:items-center [&>div]:sm:p-0',
                 ],
                 'base' => [
                     'relative bg-white dark:bg-gray-800 overflow-hidden',
-                    'relative transform overflow-hidden rounded-t-3xl md:rounded-lg bg-white text-left shadow-xl transition-all',
-                    'w-full sm:max-w-xl',
+                    'transform rounded-t-3xl md:rounded-lg bg-white text-left shadow-xl transition-all',
+                    'w-full sm:max-w-xl flex flex-col',
                 ],
                 'header' => [
-                    'wrapper' => 'sm:flex sm:items-start',
+                    'wrapper' => 'sm:flex sm:items-start shrink-0',
                     'base' => 'p-4 md:mt-4 space-y-2',
                     'intent' => 'mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100',
                     'title' => 'text-lg font-semibold leading-6 text-gray-900',
                     'description' => 'mt-2 text-sm text-gray-500',
                 ],
-                'body' => 'md:mt-4 p-4',
+                'body' => 'md:mt-4 p-4 grow overflow-y-auto',
                 'footer' => 'grid p-4 gap-2',
                 'grab' => [
-                    'wrapper' => 'w-full sm:hidden h-12',
+                    'wrapper' => 'w-full sm:hidden h-12 shrink-0',
                     'base' => 'h-full flex justify-center items-center',
                     'bar' => 'bg-gray-400 rounded-full w-[10%] h-1',
                 ],
@@ -369,6 +369,22 @@ return [
             'overlay' => [
                 'fixed inset-0 bg-gray-500 bg-opacity-75',
             ],
+        ],
+        'progressbar' => [
+            'base' => 'flex flex-col gap-2 w-full',
+            'track' => [
+                'base' => 'z-0 relative bg-primary-300/50 overflow-hidden',
+                'size' => [
+                    'xs' => 'h-1 rounded-sm',
+                    'sm' => 'h-2 rounded',
+                    'base' => 'h-2.5 rounded-lg',
+                    'xl' => 'h-3 rounded-lg',
+                    '2xl' => 'h-4 rounded-xl',
+                ],
+            ],
+            'indicator' => 'h-full bg-primary-500 rounded-sm transition-transform duration-500 -translate-x-full',
+            'label' => 'text-sm tracking-wider font-medium text-gray-600',
+            'value' => 'text-sm text-gray-900/60',
         ],
     ],
 ];

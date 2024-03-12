@@ -14,10 +14,9 @@ enum NeoBladeComponentEnum: string
     case BUTTON = 'button';
     case ALERT = 'alert';
     case DIALOG = 'dialog';
-
     case CHECKBOXES = 'checkboxes';
-
     case CHECKBOX = 'checkbox';
+    case PROGRESSBAR = 'progressbar';
 
     public function getConfig(): array|string
     {
