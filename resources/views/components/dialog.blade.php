@@ -9,7 +9,7 @@
    x-data="{ open: false }"
    x-modelable="open"
    tabindex="-1"
-   {{ $attributes->except('class') }}
+   {{ $attributes->except(['wire:submit', 'class']) }}
 >
     @if($button)
     <span x-on:click="open = true" tabindex="-1">{{ $button }}</span>
@@ -37,9 +37,9 @@
             ></div>
 
             <div @class(data_get($variants, 'panel.wrapper'))>
-                <div>
-                    <div
-                        @class(data_get($variants, 'panel.base'))
+                <div {{ $attributes->only('wire:submit') }} @class(data_get($variants, 'panel.base'))>
+                    <form
+                        @class(data_get($variants, 'panel.form'))
                         x-dialog:panel
                         x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
@@ -98,7 +98,7 @@
                         <div {{ $footer->attributes->merge(['class' => data_get($variants, 'panel.footer')]) }}>
                             {{ $footer }}
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

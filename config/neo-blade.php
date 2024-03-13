@@ -190,7 +190,7 @@ return [
                 'input' => 'flex h-6 items-center',
                 'content' => [
                     'base' => 'ml-3 grow text-sm leading-6',
-                    'label' => 'font-medium text-gray-900',
+                    'label' => 'font-medium text-gray-900 cursor-pointer',
                     'description' => 'text-gray-500',
                 ],
             ],
@@ -333,14 +333,16 @@ return [
             'base' => 'relative z-10',
             'panel' => [
                 'wrapper' => [
-                    'fixed inset-0 z-10 w-screen overflow-y-auto pt-[20%] md:pt-auto',
-                    '[&>div]:flex [&>div]:min-h-dvh [&>div]:items-end [&>div]:justify-center',
-                    'md:[&>div]:p-4 [&>div]:text-center [&>div]:sm:items-center [&>div]:sm:p-0',
+                    'fixed inset-0 z-10 w-screen overflow-y-auto md:pt-auto',
                 ],
                 'base' => [
+                    'flex min-h-dvh items-end justify-center',
+                    'md:p-4 text-center sm:items-center sm:p-0',
+                ],
+                'form' => [
                     'relative bg-white dark:bg-gray-800 overflow-hidden',
                     'transform rounded-t-3xl md:rounded-lg bg-white text-left shadow-xl transition-all',
-                    'w-full sm:max-w-xl flex flex-col',
+                    'w-full sm:max-w-xl max-h-[80%] sm:max-h-auto flex flex-col',
                 ],
                 'header' => [
                     'wrapper' => 'sm:flex sm:items-start shrink-0',
