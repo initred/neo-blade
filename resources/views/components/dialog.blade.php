@@ -1,4 +1,5 @@
 @props([
+    'button',
     'intent' => null,
     'title' => null,
     'description' => null,
@@ -11,7 +12,7 @@
    tabindex="-1"
    {{ $attributes->except(['wire:submit', 'class']) }}
 >
-    @if($button)
+    @if(isset($button))
     <span x-on:click="open = true" tabindex="-1">{{ $button }}</span>
     @endif
 

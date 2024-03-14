@@ -341,7 +341,7 @@ return [
                 ],
                 'form' => [
                     'relative bg-white dark:bg-gray-800 overflow-hidden',
-                    'transform rounded-t-3xl md:rounded-lg bg-white text-left shadow-xl transition-all',
+                    'transform rounded-t-3xl sm:rounded-lg bg-white text-left shadow-xl transition-all',
                     'w-full sm:max-w-xl max-h-[80%] sm:max-h-auto flex flex-col',
                 ],
                 'header' => [

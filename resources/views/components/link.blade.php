@@ -4,11 +4,13 @@
 ])
 
 <a
-    @class([
-        data_get($variants, 'base'),
-        data_get($variants, "size.{$size}"),
-        data_get($variants, "color.{$color}"),
-    ])
->
-    {{ $slot }}
-</a>
+    {{
+        $attributes->merge([
+            'class' => collect([
+                data_get($variants, 'base'),
+                data_get($variants, "size.{$size}"),
+                data_get($variants, "color.{$color}"),
+            ])->join(' ')
+        ])
+    }}
+>{{ $slot }}</a>
