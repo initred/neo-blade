@@ -8,15 +8,15 @@ enum NeoBladeComponentEnum: string
     case LABEL = 'label';
     case HELP = 'help';
     case TEXTAREA = 'textarea';
-    case SELECT = 'select';
     case FORM_GROUPS = 'form-groups';
     case FORM_GROUP = 'form-group';
     case BUTTON = 'button';
     case ALERT = 'alert';
     case DIALOG = 'dialog';
+    case PROGRESSBAR = 'progressbar';
     case CHECKBOXES = 'checkboxes';
     case CHECKBOX = 'checkbox';
-    case PROGRESSBAR = 'progressbar';
+    case SELECT = 'select';
 
     public function getConfig(): array|string
     {
